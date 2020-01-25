@@ -1,0 +1,25 @@
+1. 
+a) sleep 100
+ctrl+z
+ps/htop
+bg
+fg
+
+b) sleep 100 &
+jobs
+ps
+
+c)
+disown
+
+2. nohup sleep 100000
+
+3. sudo bash ./internet.sh
+********************************************************
+if ping -c 1 -W 1 8.8.8.8 >/dev/null 2>/dev/null; then
+   echo "online"
+else
+   echo "offline"
+fi
+
+

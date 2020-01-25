@@ -1,0 +1,69 @@
+1. sudo vi ~/.bashrc
+CHANGES in FILE
+source ~/.bash_profile
+*************************************
+today(){
+div='-'
+if [ "$#" -eq 1 ]
+then
+        div=$1
+fi
+
+path="unix/$(date +%Y$div%m$div%d)"
+mkdir -p "$path"
+cd "$path"
+}
+
+2. cd test_sum
+sudo bash ./runtests.sh
+
+******************************
+for f in in*
+do
+echo "=== $f ==="
+f_content=$(cat "$f")
+echo "$f_content"
+echo "----------"
+sum=0
+echo "$((time bash ./calcs.sh $f_content) 2>&1))"
+done
+read -n 1 -s -r -p "Press any key to continue..."
+echo ""
+
+
+((sum=$1+$2))
+echo $sum
+
+3. 
+mkdir test_archive
+cd test_archive
+sudo bash ./archive.sh 2018.tar.gz >logs.txt
+
+*****************************************************
+ugz () {
+	echo $1
+	if [[ $1 == *.gz ]]
+	then
+		gunzip $1
+		ugz ${1%%.gz}
+	else
+		cat $1
+	fi
+}
+
+utar () {
+	echo $1
+
+	if [[ $1 == *.tar.gz ]]
+	then
+		for tar_arch in $(tar -xvf $1 | grep '\.gz$')
+		do
+			utar $tar_arch
+		done
+	else
+		ugz $1
+	fi
+}
+
+utar $1
+

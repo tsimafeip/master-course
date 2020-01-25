@@ -1,0 +1,43 @@
+1. vi main.cpp
+
+#include <iostream>
+
+int main(int argc, char *argv[]){
+	    for(int i = 0; i < argc; ++i) {
+		 std::cout <<  "arg #" << i << " " << argv[i] << "\n";
+	}
+}
+
+g++ main.cpp -o main
+
+vi my.sh
+
+#!/home/tsimafeip/main
+
+./my.sh 
+
+
+2. sudo python3 ./m.py "hello, world!" --help 1 -f 2 >/dev/null
+sudo bash ./stdswap.sh python3 ./m.py "hello, world!" --help 1 -f 2 >/dev/null
+"$@" 3>&2 2>&1 1>&3
+
+
+3.
+sudo vi ~/.bashrc
+CURRENTUSER=`whoami`	
+if [ "$CURRENTUSER" = "root" ]; then
+  PS1='\[\033[1;31m\]\u@\h:\w$\[\033[0m\] '
+fi
+
+
+4. LS_COLORS="mh=44" ls -l
+
+5. sudo python3 ./main.py >kek
+*************************************************
+import sys
+
+if sys.stdout.isatty():
+    print("I am running in a terminal")
+else:
+    sys.stderr.write("I am being piped or redirected\n")
+**************************************************

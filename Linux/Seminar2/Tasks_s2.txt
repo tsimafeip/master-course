@@ -1,0 +1,32 @@
+1. 
+а) В каталоге, размер которого вычисляет команда du, лежит файл и несколько симлинков на него.
+cd s_2/t_2
+tree
+
+Симлинки ничего не весят
+б) В каталоге, размер которого вычисляет команда du, лежат симлинки на файл, а сам файл находится в другом каталоге.
+Опять ж симлинки ничего не весят
+
+Хардлинки возвращают вес файла, даже если файла нет в директории.
+
+2.
+cd /s_2/t_2
+tar -zcvf a.tar.gz cycle_links --dereference
+
+
+3. mv f2.txt f1.txt - хардлинк сохраняет старый текст.
+cp f2.txt f1.txt - хардлинк хранит новый текст.
+
+4.
+dd if=/dev/zero of=file bs=1MB count=512
+mkfs.ext2 file
+
+dd if=/dev/zero of=file bs=512m count=1
+mke2fs -t ext2 file
+mkdir mntdir
+sudo mount -o loop ./file ./mntdir/
+sudo mkdir mntdir/foo1
+sudo mkdir mntdir/foo2
+echo "abracadabra" | sudo tee mntdir/file1
+cat mntdir/file1 
+cat /etc/mtab

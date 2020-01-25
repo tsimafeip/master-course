@@ -1,0 +1,54 @@
+//Task3
+mkdir -p foo/bar/bar/{bar,baz} && touch foo/bar/bar/{{1,2}.txt,bar/{3,4,5}.txt,baz/{6,7,8}.txt}
+
+mv foo/bar foo/bar1
+mv foo/bar1/* foo/
+rm -r foo/bar1
+
+//Task4
+first terminal:
+mkdir subdir
+cd subdir
+
+another terminal: 
+rm -r subdir
+
+first terminal: 
+touch file.txt
+
+OR
+mkdir subdir
+cd subdir
+rm -r ../subdir
+
+mkdir subdir && cd subdir && rm -r ../subdir && touch f.txt
+
+//Task5
+mkdir -p foo/bar/{baz,quux} && touch foo/bar/{{1,2}.txt,baz/{3,4}.txt,quux/{5,6}.txt}
+
+a)tar cf res1.tar ./foo/bar
+tar -tvf res1.tar
+
+All files and subfolders were archived. 
+Subfolders and standalone files.
+
+b) tar cf res2.tar foo/bar
+tar -tvf res2.tar
+
+Same as a), but without a dot.
+
+c) tar cf res3.tar -C foo/bar .
+
+Packs without foo/bar dir, but with dot.
+
+d) cd foo/bar && tar cvf ../../res4.tar * && cd -
+
+Packs without foo/bar dir + without dot.
+Packs all content of the foo/bar.
+
+//Task6
+tar jtf big2.tar.bz2 | grep secret.txt > 1.txt
+tar jxf big2.tar.bz2 "$(cat 1.txt)"
+sudo cat enmfx4ki/2lvbefws/qp5ww8a0/dkwsk1g4/kvwq8wg2/secret.txt
+
+tar can find with a mask.
