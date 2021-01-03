@@ -1,0 +1,25 @@
+Контрольное задание 3. Анализ тональности
+Примите участие в соревновании . Для выполнения задания реализуйте
+
+Модель на основе tf-idf и bag of word векторизации [2 балл]
+Оценку с помощью сверточной нейронной сети и предобученного распределенного векторного представления слов. [3 балла]
+Оценку с помощью рекуррентной нейронной сети и предобученного распределенного векторного представления слов. [6 баллов]
+Модель на основе Universal Sentence Encoder . [3 балла]
+Попробуйте занять высокое место на Kaggle в Private Leaderboard [до 4 баллов].
+Итоговое решение должно быть не ниже Baseline 4.
+
+В качестве предобученного распределенного векторного представления слов можно использовать fastText, Word2Vec, Glove. Для рабобы с ними рекомендуются библиотеки gensim и spacy.
+
+
+СДАВАЙТЕ, ПОЖАЛУЙСТА, В ANYTASK!
+
+Рекомендуемые предобученные векторные представления:
+
+https://github.com/FredericGodin/TwitterEmbeddings 
+https://nlp.stanford.edu/projects/glove/
+https://fasttext.cc/docs/en/english-vectors.html
+
+Tutorials:
+
+https://www.depends-on-the-definition.com/guide-to-word-vectors-with-gensim-and-keras/ 
+https://habr.com/ru/company/mailru/blog/417767/ 

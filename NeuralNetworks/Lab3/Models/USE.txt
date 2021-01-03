@@ -1,0 +1,20 @@
+from tensorflow.keras.optimizers import RMSprop
+
+def build_use_model(lr=0.001):
+    model = tf.keras.Sequential()
+
+    model.add(Dense(256, input_shape=(X_train_use.shape[1], ), activation='relu'))
+    model.add(BatchNormalization())
+    model.add(Dropout(0.2))
+
+    model.add(Dense(128, activation='relu'))
+    model.add(BatchNormalization())
+    model.add(Dropout(0.2))
+
+    model.add(Dense(1))
+
+    model.compile(loss='mean_squared_error',
+                  optimizer=RMSprop(learning_rate=lr),
+                  metrics=['MAE'])
+    
+    return model

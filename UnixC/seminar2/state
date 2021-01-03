@@ -1,0 +1,2 @@
+logrotate state -- version 2
+"./log.txt" 2020-3-9-22:0:47

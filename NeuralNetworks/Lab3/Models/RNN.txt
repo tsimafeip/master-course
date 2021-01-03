@@ -1,0 +1,15 @@
+def build_rnn_model():
+    sequence_input = Input(shape=(MAX_SEQUENCE_LENGTH,), dtype='int32')
+    x = embedding_layer(sequence_input)
+    x = SpatialDropout1D(0.2)(x)
+    x = Bidirectional(LSTM(100))(x)
+    x = Dropout(0.2)(x)
+    x = Dense(512, activation='relu')(x)
+    x = BatchNormalization()(x)
+    x = Dense(1, activation='sigmoid')(x)
+    model = Model(sequence_input, x)
+
+    model.compile(loss='mean_squared_error',
+                  optimizer='rmsprop',
+                  metrics=['MAE'])
+    return model

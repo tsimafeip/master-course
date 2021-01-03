@@ -1,0 +1,12 @@
+Вариант 5. Language identification
+Цель: определение языка текста (документа)
+
+Датасет:  https://zenodo.org/record/841984  
+
+Описание датасета: https://arxiv.org/pdf/1801.07779.pdf 
+
+Подсказка 1: https://github.com/google/cld3
+
+Подсказка 2: https://fasttext.cc/docs/en/language-identification.html 
+
+Можно сначала попробовать на урезанном датасете: https://www.kaggle.com/zarajamshaid/language-identification-datasst
